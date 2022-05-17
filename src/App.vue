@@ -1,30 +1,43 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+  <div id="App" class="container-fluid">
+    <header class="row">
+      <fr-logo />
+      <fr-nav />
+    </header>
+    <main class="row">
+      <fr-aside />
+      <article><router-view /></article>
+    </main>
   </div>
-  <router-view/>
 </template>
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+<script setup>
+import FrLogo from "@/components/FrLogo";
+import FrNav from "@/components/FrNav";
+import FrAside from "@/components/FrAside";
+</script>
+
+<style lang="scss" scoped>
+header {
+  height: 60px;
 }
-
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
+main {
+  height: calc(100vh - 60px);
+}
+#FrLogo,
+#FrAside {
+  flex: none;
+  width: 200px;
+}
+#FrLNav,
+article {
+  flex: 1 1 0;
+}
+article {
+  height: 100%;
+  > * {
+    height: 100%;
+    overflow-y: auto;
   }
 }
 </style>

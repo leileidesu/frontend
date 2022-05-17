@@ -1,10 +1,10 @@
 <template>
-  <div id="Home">Welcome!</div>
+  <div id="FrLogo" class="">MiaoW Forum</div>
 </template>
 
 <script>
 export default {
-  name: "Home",
+  name: "FrLogo",
   data() {
     return {};
   },
@@ -12,6 +12,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-#Home {
+#FrLogo {
+  background-color: #fd9f9f;
 }
 </style>
